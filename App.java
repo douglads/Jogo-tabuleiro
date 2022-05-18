@@ -110,7 +110,6 @@ public class App {
                     dadosSoma = dado1 + dado2;
                     pj1 += dadosSoma;
                     System.out.println("Ande mais " + dadosSoma + " casas " + jogador1 + " você está na casa: " + pj1);
-                    bj1 = true;
                     System.in.read();
                 } else if ((bj1 == true || pj1 == 15 || pj1 == 23 || pj1 == 36) && (pj1 < 48)) {//aqui sera testado se o jogador caiu na armadilha
                     System.out
@@ -120,7 +119,6 @@ public class App {
                 } else if (bj1 == true && pj1 > 48) {/*aqui verifica se o jogador passou a casa final do jogo que é a 48, caso tenha passado é subtraido o valor das casas passadas*/ 
                     int fimj1 = pj1 - 48;
                     pj1 = 48 - fimj1;
-                    bj1 = true;
                     System.out.println(
                            jogador1 + " você passou as casas limitantes.\nentão você tera que jogar os dados até conseguir\no valor igual a quantidade de casas necessárias "
                                     + jogador1 + " você está na posição: " + pj1);                    
@@ -145,7 +143,6 @@ public class App {
                     dadosSoma = dado1 + dado2;
                     pj2 += dadosSoma;
                     System.out.println("Ande mais " + dadosSoma + " casas " + jogador2 + " você está na casa: " + pj2);
-                    bj2 = true;
                     System.in.read();
                 } else if ((bj2 == true || pj2 == 15 || pj2 == 23 || pj2 == 36) && (pj2 < 48)) {                    
                     System.out
@@ -154,7 +151,6 @@ public class App {
                 } else if (bj2 == true && pj2 > 48) {
                     int fimj2 = pj2 - 48;
                     pj2 = 48 - fimj2;
-                    bj2 = true;
                     System.out.println(
                             jogador2 + " você passou as casas limitantes.\nentão você tera que jogar os dados até conseguir\no valor igual a quantidade de casas necessárias "
                                     + jogador2 + " você está na posição: " + pj2);
@@ -179,7 +175,6 @@ public class App {
                     dadosSoma = dado1 + dado2;
                     pj3 += dadosSoma;
                     System.out.println("Ande mais " + dadosSoma + " casas " + jogador3 + " você está na casa: " + pj3);
-                    bj3 = true;
                     System.in.read();
                 } else if ((bj3 == true || pj3 == 15 || pj3 == 23 || pj3 == 36) && (pj3 < 48)) {
                     System.out
@@ -189,7 +184,6 @@ public class App {
                 } else if (bj3 == true && pj3 > 48) {
                     int fimj3 = pj3 - 48;
                     pj3 = 48 - fimj3;
-                    bj3 = true;
                     System.out.println(
                             jogador3 +" você passou as casas limitantes.\nentão você tera que jogar os dados até conseguir\no valor igual a quantidade de casas necessárias "
                                     + jogador3 + " você está na posição: " + pj3);                    
