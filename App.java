@@ -6,69 +6,69 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner entrada = new Scanner(System.in);
         Random aleatorio = new Random();
-        String sj1, sj2, sj3, jogador1 = "", jogador2 = "", jogador3 = "";
+        String jogador1 = "", jogador2 = "", jogador3 = "";
+        String[] sj = new String[4];
 
         System.out.println("Olá, jogadores. Vamos jogar tabuleiro \n");
-        System.out.print("\nPrimeiro jogador informe seu nome: ");
-        sj1 = entrada.next().toUpperCase();
-        System.out.print("\nSegundo jogador informe seu nome: ");
-        sj2 = entrada.next().toUpperCase();
-        System.out.print("\nTerceiro jogador informe seu nome: ");
-        sj3 = entrada.next().toUpperCase();
+        for (int i = 1; i >= 1 && i < 4; i++)  {            
+            System.out.print("\n"+ i +"º jogador informe seu nome: ");
+            sj[i] = entrada.next().toUpperCase();
+        }
+        
         System.out.print("Pressione <Enter> para sortear os jogadores: ");
         System.in.read();
 
-        int ij1 = aleatorio.nextInt(3);
-        int ij2 = aleatorio.nextInt(3);
-        int ij3 = aleatorio.nextInt(3);
-        ij1++;
-        ij2++;
-        ij3++;
+        int ij[] = new int[4];
+        for (int i = 1; i >= 1 && i < 4; i++ ) {
+            ij[i] = aleatorio.nextInt(3)+1;
+            i++;
+        }
 
-        while (ij2 == ij1) {
-            ij2 = aleatorio.nextInt(3);
-            ij2++;
+        while (ij[2] == ij[1]) {
+            ij[2] = aleatorio.nextInt(3)+1;
 
         }
-        while (ij3 == ij1 || ij3 == ij2) {
-            ij3 = aleatorio.nextInt(3);
-            ij3++;
+        while (ij[3] == ij[1] || ij[3] == ij[2]) {
+            ij[3] = aleatorio.nextInt(3)+1;
 
         }
+
         // aqui faz o sorteio dos jogadores e é setado numa variavel qual ordem eles ficaram.
-        if (ij1 == 1) {
-            System.out.println("Olá " + sj1 + " Você será o primeiro(a) a jogar");
-            jogador1 = sj1;
-        } else if (ij1 == 2) {
-            System.out.println("Olá " + sj1 + " Você será o segundo(a) a jogar");
-            jogador2 = sj1;
+
+        
+        if (ij[1] == 1) {
+            System.out.println("Olá " + sj[1] + " Você será o primeiro(a) a jogar");
+            jogador1 = sj[1];
+        } else if (ij[1] == 2) {
+            System.out.println("Olá " + sj[1] + " Você será o segundo(a) a jogar");
+            jogador2 = sj[1];
         } else {
-            System.out.println("Olá " + sj1 + " Você será o terçeiro(a) a jogar");
-            jogador3 = sj1;
+            System.out.println("Olá " + sj[1] + " Você será o terçeiro(a) a jogar");
+            jogador3 = sj[1];
         }
 
-        if (ij2 == 1) {
-            System.out.println("Olá " + sj2 + " Você será o primeiro a jogar");
-            jogador1 = sj2;
-        } else if (ij2 == 2) {
-            System.out.println("Olá " + sj2 + " Você será o segundo(a) a jogar");
-            jogador2 = sj2;
+        if (ij[2] == 1) {
+            System.out.println("Olá " + sj[2] + " Você será o primeiro a jogar");
+            jogador1 = sj[2];
+        } else if (ij[2] == 2) {
+            System.out.println("Olá " + sj[2] + " Você será o segundo(a) a jogar");
+            jogador2 = sj[2];
         } else {
-            System.out.println("Olá " + sj2 + " Você será o terçeiro(a) a jogar");
-            jogador3 = sj2;
+            System.out.println("Olá " + sj[2] + " Você será o terçeiro(a) a jogar");
+            jogador3 = sj[2];
         }
 
-        if (ij3 == 1) {
-            System.out.println("Olá " + sj3 + " Você será o primeiro a jogar");
-            jogador1 = sj3;
+        if (ij[3] == 1) {
+            System.out.println("Olá " + sj[3] + " Você será o primeiro a jogar");
+            jogador1 = sj[3];
         }
 
-        else if (ij3 == 2) {
-            System.out.println("Olá " + sj3 + " Você será o segundo(a) a jogar");
-            jogador2 = sj3;
+        else if (ij[3] == 2) {
+            System.out.println("Olá " + sj[3] + " Você será o segundo(a) a jogar");
+            jogador2 = sj[3];
         } else {
-            System.out.println("Olá " + sj3 + " Você será o terçeiro(a) a jogar");
-            jogador3 = sj3;
+            System.out.println("Olá " + sj[3] + " Você será o terçeiro(a) a jogar");
+            jogador3 = sj[3];
         }
 
         
@@ -77,6 +77,7 @@ public class App {
         int dado1, dado2, dadosSoma, pj1 = 0, pj2 = 0, pj3 = 0;
 
         boolean bj1 = true, bj2 = true, bj3 = true;
+
 //Isto testa se o jogador esta dentro das casas limitantes que são 48 casas do jogo + 12 dos dados
         while (pj1 < 61 || pj2 < 61 || pj3 < 61) {
             System.in.read();// isso serve para parar o console
